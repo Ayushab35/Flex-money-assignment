@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-shadow: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+body {
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+#navbar {
+  position: relative;
+  font-size: 1rem;
+  height: 4em;
+  /* background-color: #F8F5F0; */
+  background-image: url('/Users/anoragbhandarkar/Desktop/flexmoney/src/images/bg-img.png');
+  /* Specify the size and position of the background image */
+  background-size: cover; /* or contain, or a specific size */
+  background-position: center; /* or top, bottom, left, right, etc. */
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  padding: 0 1em;
+  overflow: hidden;
+  color: rgb(45, 85, 19);
+}
+
+#navbar .open-menu-btn {
+  display: none;
+  color: black;
+}
+
+#navbar .item-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  border-radius: .33em;
+}
+
+#navbar .item-wrapper .stroke {
+  width: 0px;
+  height: .1rem;
+  background: black;
+  border-radius-top-left: .5em;
+  border-radius-bottom-left: .5em;
+  position: absolute;
+  left: 0;
+  top: 70%;
+  opacity: 1;
+  transition: top .3s ease, left .3s ease, width .3s ease, opacity .3s ease, transform .3s ease;
+}
+
+
+#navbar .item-wrapper .item:nth-of-type(1) {
+  margin: 0 auto 0 .33em;
+}
+
+#navbar .item-wrapper .item {
+  width: min-width;
+  min-width: 3em;
+  height: 2em;
+  margin: 0;
+  padding: .33em 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: none;
+}
+
+#navbar .item-wrapper .item.activated a {
+  color: white;
+}
+
+#navbar .item-wrapper .item a {
+  color: rgb(45, 85, 19);
+  z-index: 100;
+}
+
+/* main {
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background: #f8e16c;
+} */
+
+@media only screen and (max-width: 500px) {
+  #navbar {
+    margin: 0;
+    padding: 0;
+    transition: height .3s ease;
+  }
+
+  #navbar.open {
+    height: 25em;
+  }
+
+  #navbar .open-menu-btn {
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    cursor: pointer;
+  }
+
+  #navbar .open-menu-btn span {
+    color: black;
+    font-size: 2rem;
+  }
+
+  #navbar .item-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin: 0;
+    padding: 0;
+    margin: 4em 0 0 0;
+  }
+
+  #navbar .item-wrapper .stroke {
+    left: 50%;
+    top: 4em;
+  }
+
+  #navbar .item-wrapper .item {
+    margin: 0 !important;
+    width: 100%;
+    padding: .33em 0em;
+  }
+}
